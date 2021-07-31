@@ -1,3 +1,6 @@
+const db = require("../models/sequelize");
+const Movie = db.movies;
+
 module.exports = {
   getLists: (req, res, next) => {
     const data = [];
