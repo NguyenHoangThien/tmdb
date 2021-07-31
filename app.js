@@ -3,7 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
+// const { Sequelize } = require('sequelize');
+const db = require("./models/sequelize");
 const { getConfigAccessLog } = require('./logger');
 const router = require('./routes');
 const env = process.env.NODE_ENV || 'development';
@@ -58,3 +59,10 @@ const onError = error => {
 server.listen(serverConfig.PORT);
 server.on('error', onError);
 server.on('listening', onListening);
+
+// const sequelize = new Sequelize('tmdb', 'root', '', {
+//   host: 'localhost',
+//   dialect: 'mysql'
+// });
+
+db.sequelize.sync();
