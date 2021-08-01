@@ -19,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./movie.js")(sequelize, Sequelize);
+db.movies = require("./movie.js")(sequelize, Sequelize);
 
 module.exports = db;

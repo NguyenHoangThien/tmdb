@@ -15,6 +15,9 @@ module.exports = (sequelize, Sequelize) => {
     original_title: {
       type: Sequelize.STRING
     },
+    genres: {
+      type: Sequelize.STRING
+    },
     adult: {
       type: Sequelize.BOOLEAN
     },
@@ -22,7 +25,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.BOOLEAN
     },
     original_language: {
-      type: Sequelize.BOOLEAN
+      type: Sequelize.STRING
     },
     title: {
       type: Sequelize.STRING
