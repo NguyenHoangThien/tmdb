@@ -1,0 +1,5 @@
+- start this project by command: npm run local
+- There is a cronjobs update database at 12 everyday
+- config db at config/db.js
+- config api_key to get data from tmdb at config/tmdb_api_key.js
+- can run to fetch the data and update it manually at script cronjobs/scripts_fetch.js
