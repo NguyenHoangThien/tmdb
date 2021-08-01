@@ -3,21 +3,21 @@ const Movie = db.movies;
 
 module.exports = {
   getLists: (req, res, next) => {
-    let { page } = req.query;
+    let { page, type } = req.query;
     if (!Number(page)) {
       page = 1;
     };
 
+    let order = [['popularity', 'DESC']];
+
+    if (type === 'Latest') {
+      order = [['release_date', 'DESC']];
+    }
+
     const limit = 20;
     const offset = (page - 1) * limit;
 
-    Movie.findAll({
-      order: [
-        ['popularity', 'DESC']
-      ],
-      limit,
-      offset
-    })
+    Movie.findAll({ order, limit, offset })
     .then(data => {
       res.json({
         succes: true,
